@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #44e9ff;
+    --secondary-color: #496480;
+    --tertiary-color: rbg(192, 246, 253);
+    --white: #ffffff;
+}
+
+header {
+    display: flexbox;
+    background: var(--secondary-color);
+    padding: 30px 25px;
+    border-bottom: : 5px solid var(--primary-color);
+
+}
+
+h1 {
+    text-align: center;
+    align-content: center;
+}
+
+.time {
+    text-align: right;
+}
+
+.score {
+    text-align: left;
+}
