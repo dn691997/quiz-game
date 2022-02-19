@@ -49,6 +49,7 @@ let questions = [
   },
 ];
 
+const SCORE_NEGATIVE = -100;
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 4;
 
@@ -97,6 +98,10 @@ choices.forEach((choice) => {
 
     if (classToApply === "correct") {
       incrementScore(SCORE_POINTS);
+    }
+
+    if (classToApply === "incorrect") {
+      incrementScore(SCORE_NEGATIVE);
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
