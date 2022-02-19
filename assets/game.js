@@ -4,6 +4,32 @@ const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
 
+const timerH = document.querySelector("#timer");
+let timeSecond = 120;
+
+displayTime(timeSecond);
+
+const countDown = setInterval(() => {
+  timeSecond--;
+  displayTime(timeSecond);
+  if (timeSecond <= 0 || timeSecond < 1) {
+    endTime();
+    clearInterval(countDown);
+  }
+}, 1000);
+
+function displayTime(second) {
+  const min = Math.floor(second / 60);
+  const sec = second % 60;
+  timerH.innerHTML = `${min < 10 ? "0" : ""}${min}:${
+    sec < 10 ? "0" : ""
+  }${sec}`;
+}
+
+function endTime() {
+  timerH.innerHTML = "TIME OUT";
+}
+
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
